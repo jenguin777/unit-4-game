@@ -95,6 +95,10 @@ $(document).ready(function () {
             startGame();
         }
 
+
+    //Need to add reset function
+    //May want to have winStuff and loseStuff functions
+
     });
     startGame();
 });
