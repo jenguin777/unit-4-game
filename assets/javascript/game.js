@@ -4,7 +4,8 @@ $(document).ready(function () {
 
     var targetNumber;
 
-    $("#number-to-guess").text(targetNumber);
+    //$("#number-to-guess").text(targetNumber);
+    //$("#target-number").text(targetNumber); Do I need this? I'm calling it inside of startGame().
 
     var counter = 0;
     var losses = 0;
@@ -16,17 +17,16 @@ $(document).ready(function () {
     //     image4 : "../images/GrayBlueCrystal420x420.jpg"
     // };
 
-    // $("#wins").append();
-    // console.log("wins: " + wins);
-
     // Now we want to create multiple crystals each with their own unique number value between 19 and 120 (inclusive).
     function startGame () {
         targetNumber = Math.floor(Math.random() * (120 -50 + 1)) + 50;
-        console.log(targetNumber);
-        $("#wins").append();
+        $("#target-number").text('Target Number: ' + targetNumber);
+        console.log("target-number: " + targetNumber);
+        $("#wins").text("Wins: " + wins);
         console.log("wins: " + wins);
-        $("#losses").append();
-        $("#target-number").append();
+        $("#losses").text("Losses: " + losses);
+        console.log("losses: " + losses);
+        $("#score").text("Your total score is: " + counter);
         renderCrystals();
     }
 
@@ -49,7 +49,7 @@ $(document).ready(function () {
             // Each imageCrystal will be given a src link to the crystal image - need to enhance this to show 4 crystals and apply same logic to each
             // imageCrystal.attr("src", "http://cdn.playbuzz.com/cdn/35910209-2844-45c0-b099-f4d82878d54f/00261fda-4062-4096-81fd-8cf96b9034e8.jpg");
 
-            imageCrystal.attr("src", "../assets/images/GrayBlueCrystal420x420.jpg");
+            imageCrystal.attr("src", "./assets/images/GrayBlueCrystal420x420.jpg");
 
     
             // Each imageCrystal will be given a data attribute called data-crystalValue.
@@ -76,6 +76,7 @@ $(document).ready(function () {
         // We then add the crystalValue to the user's "counter" which is a global variable.
         // Every click, from every crystal adds to the global counter.
         counter += crystalValue;
+        $("#score").text("Your total score is: " + counter);
 
         // All of the same game win-lose logic applies. So the rest remains unchanged.
         alert("New score: " + counter);
@@ -83,14 +84,14 @@ $(document).ready(function () {
         if (counter === targetNumber) {
             alert("You win!");
             wins++;
-            $("#wins").append();
+            $("#wins").text("Wins: " + losses);
             startGame();
         }
 
         else if (counter > targetNumber) {
             alert("You lose!!");
             losses++;
-            $("#losses").append();
+            $("#losses").text("Losses: " + losses);
             startGame();
         }
 
