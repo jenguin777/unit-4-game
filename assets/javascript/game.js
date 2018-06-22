@@ -10,15 +10,11 @@ $(document).ready(function () {
     var counter = 0;
     var losses = 0;
     var wins = 0;
-    // var pictures {
-    //     image1 : "../images/BlueCrystal200x200.jpg",
-    //     image2 : "../images/FuschiaCrystal596x745.jpg",
-    //     image3 : "../images/GoldCrystal650x650.jpg",
-    //     image4 : "../images/GrayBlueCrystal420x420.jpg"
-    // };
+    var pictures = ["./assets/images/BlueCrystal200x200.jpg", "./assets/images/FuschiaCrystal596x745.jpg","./assets/images/GoldCrystal650x650.jpg", "./assets/images/GrayBlueCrystal420x420.jpg"];
 
     // Now we want to create multiple crystals each with their own unique number value between 19 and 120 (inclusive).
     function startGame () {
+        counter = 0;
         targetNumber = Math.floor(Math.random() * (120 -50 + 1)) + 50;
         $("#target-number").text('Target Number: ' + targetNumber);
         console.log("target-number: " + targetNumber);
@@ -49,7 +45,8 @@ $(document).ready(function () {
             // Each imageCrystal will be given a src link to the crystal image - need to enhance this to show 4 crystals and apply same logic to each
             // imageCrystal.attr("src", "http://cdn.playbuzz.com/cdn/35910209-2844-45c0-b099-f4d82878d54f/00261fda-4062-4096-81fd-8cf96b9034e8.jpg");
 
-            imageCrystal.attr("src", "./assets/images/GrayBlueCrystal420x420.jpg");
+            //We want to assign different crystal images for each of the 4 crystals
+            imageCrystal.attr("src", pictures[i]);
 
     
             // Each imageCrystal will be given a data attribute called data-crystalValue.
@@ -79,7 +76,7 @@ $(document).ready(function () {
         $("#score").text("Your total score is: " + counter);
 
         // All of the same game win-lose logic applies. So the rest remains unchanged.
-        alert("New score: " + counter);
+        //alert("New score: " + counter);
 
         if (counter === targetNumber) {
             alert("You win!");
