@@ -33,7 +33,7 @@ $(document).ready(function () {
             // We want to assign a random number for each crystal between 1 and 12 (inclusive)
             var minCrystalValue = 12;
             var maxCrystalValue = 1;
-            var randomNumber = Math.floor(Math.random() * (minCrystalValue - maxCrystalValue + 1)) + minCrystalValue;
+            var randomNumber = Math.floor(Math.random() * (maxCrystalValue - minCrystalValue + 1)) + minCrystalValue;
 
             // For each iteration, we will create an imageCrystal
             var imageCrystal = $("<img>");
@@ -93,3 +93,4 @@ $(document).ready(function () {
     });
     startGame();
 });
+
