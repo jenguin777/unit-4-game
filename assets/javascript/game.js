@@ -31,8 +31,8 @@ $(document).ready(function () {
         //Now we want to make sure we loop 4 times
         for (var i = 0; i < 4; i++) {
             // We want to assign a random number for each crystal between 1 and 12 (inclusive)
-            var minCrystalValue = 12;
-            var maxCrystalValue = 1;
+            var minCrystalValue = 1;
+            var maxCrystalValue = 12;
             var randomNumber = Math.floor(Math.random() * (maxCrystalValue - minCrystalValue + 1)) + minCrystalValue;
 
             // For each iteration, we will create an imageCrystal
@@ -91,5 +91,4 @@ $(document).ready(function () {
     //May want to have winStuff and loseStuff functions later on
 
     });
-    startGame();
 });
