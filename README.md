@@ -1,9 +1,15 @@
-# unit-4-game
+# The Crystal Collector Game
 The Crystal Collector Game is a jQuery web-based game where you attempt to match your score to a random number by clicking 1 of 4 crystal buttons, each with their own random value.
 
-License - no license required.
+# Technologies Used
+* Javascript
+* JQuery
 
-Code of Conduct - Be nice and don't talk to strangers.
+# To run the application
+View a deployed version [here.](https://jenguin777.github.io/unit-4-game/)
 
-Questions or comments can be directed to Jen Fahey jenguin777@gmail.com.
+# License
+MIT license applies.
 
+# Code of Conduct
+Be nice and don't talk to strangers.
